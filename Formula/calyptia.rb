@@ -5,20 +5,20 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/calyptia/cli"
-  version "0.48.0"
+  version "0.49.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/calyptia/cli/releases/download/v0.48.0/cli_0.48.0_darwin_arm64.tar.gz"
-      sha256 "9883680497cdb8392dd6e15996a2c10b90d08dfdd6c5bde0ef13e81f977e815e"
+      url "https://github.com/calyptia/cli/releases/download/v0.49.0/cli_0.49.0_darwin_arm64.tar.gz"
+      sha256 "925de4c5d8180291c747e7bc54c2c448bca27a2c0529f692b28fc59daea9493f"
 
       def install
         bin.install "calyptia"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v0.48.0/cli_0.48.0_darwin_amd64.tar.gz"
-      sha256 "4f14ed9aefef281e0d95dbad3513cc83d08bbd19b672b014d2292956ae28c599"
+      url "https://github.com/calyptia/cli/releases/download/v0.49.0/cli_0.49.0_darwin_amd64.tar.gz"
+      sha256 "8d7595e3740ce1a2defd7c87effa9740875da40def3ecc2155a875dfcf610e51"
 
       def install
         bin.install "calyptia"
@@ -27,9 +27,17 @@ class Calyptia < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/calyptia/cli/releases/download/v0.49.0/cli_0.49.0_linux_arm64.tar.gz"
+      sha256 "773d32b5c481b02d1c3ea39fbcbe11c69a1a5caf7005d2514be19d7ddcd38d77"
+
+      def install
+        bin.install "calyptia"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v0.48.0/cli_0.48.0_linux_amd64.tar.gz"
-      sha256 "e8d616628b67393afcc7c8a08ec98cefca8f1391df2d332a1c5e7b100d9fd2d7"
+      url "https://github.com/calyptia/cli/releases/download/v0.49.0/cli_0.49.0_linux_amd64.tar.gz"
+      sha256 "4a98c3ab9c066a55ff8b4755979e17f21064e47c372956e5c41a621465afdf44"
 
       def install
         bin.install "calyptia"
