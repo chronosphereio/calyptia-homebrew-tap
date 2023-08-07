@@ -5,20 +5,20 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/calyptia/cli"
-  version "1.4.7"
+  version "1.4.8"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/calyptia/cli/releases/download/v1.4.7/cli_1.4.7_darwin_arm64.tar.gz"
-      sha256 "e1322ce022477a130658e3bcad6a761d5a7ff4ec19ebc7526767c1b8748a9b5c"
+    if Hardware::CPU.intel?
+      url "https://github.com/calyptia/cli/releases/download/v1.4.8/cli_1.4.8_darwin_amd64.tar.gz"
+      sha256 "7b73d6b090517ee757b586f06bd6287d419b1b39ca98a85e131cd3956a01f901"
 
       def install
         bin.install "calyptia"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v1.4.7/cli_1.4.7_darwin_amd64.tar.gz"
-      sha256 "296b0d7b82aabd423244016c80d13471fd3b77ed396b1a37293bff20942ff8b8"
+    if Hardware::CPU.arm?
+      url "https://github.com/calyptia/cli/releases/download/v1.4.8/cli_1.4.8_darwin_arm64.tar.gz"
+      sha256 "47d1901b9e5c8168d69ff5d49ea240b1771298877b5e78ba844b7230d05c7d9e"
 
       def install
         bin.install "calyptia"
@@ -27,17 +27,17 @@ class Calyptia < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v1.4.7/cli_1.4.7_linux_amd64.tar.gz"
-      sha256 "15cbeea579d2e0ad51f0ae78172334aa8e4468e0f2ed49c4f51f30222d7db73e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/calyptia/cli/releases/download/v1.4.8/cli_1.4.8_linux_arm64.tar.gz"
+      sha256 "350c893772db53199e15b7455506fc922677cc1fd962ef0acb1f2a4ea3fc26f1"
 
       def install
         bin.install "calyptia"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/calyptia/cli/releases/download/v1.4.7/cli_1.4.7_linux_arm64.tar.gz"
-      sha256 "75f566146a1bc8451183d210776a66aacd8fc81fb98c832a4766856e69e84b9a"
+    if Hardware::CPU.intel?
+      url "https://github.com/calyptia/cli/releases/download/v1.4.8/cli_1.4.8_linux_amd64.tar.gz"
+      sha256 "64676f9add78e58779a8d7c16a88d95a306c78131beadb7c13354aeeb0cacdee"
 
       def install
         bin.install "calyptia"
