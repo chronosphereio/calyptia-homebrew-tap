@@ -5,20 +5,20 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/calyptia/cli"
-  version "1.6.1"
+  version "1.6.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v1.6.1/cli_1.6.1_darwin_amd64.tar.gz"
-      sha256 "298bd86716085f019fff25a1676a0602becae97f8ad888344ee00471dd4c2f23"
+      url "https://github.com/calyptia/cli/releases/download/v1.6.2/cli_1.6.2_darwin_amd64.tar.gz"
+      sha256 "c85777e3227073e97e5d42dc061fa04082c28ee29152e8879e711c4d38071af1"
 
       def install
         bin.install "calyptia"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/calyptia/cli/releases/download/v1.6.1/cli_1.6.1_darwin_arm64.tar.gz"
-      sha256 "7ed44dcdf3f02b392ad1341cefb603fb4ffa1d48bb97875744f7ff7643b68dbe"
+      url "https://github.com/calyptia/cli/releases/download/v1.6.2/cli_1.6.2_darwin_arm64.tar.gz"
+      sha256 "f1c8147d5896382fb5a413430e8561fd37396cbd4db22104b9500f9704581f83"
 
       def install
         bin.install "calyptia"
@@ -27,17 +27,17 @@ class Calyptia < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v1.6.1/cli_1.6.1_linux_amd64.tar.gz"
-      sha256 "40bb29dd472112f66498aec44e29e6e66ac67b9f119e44a13066f354e2b140e2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/calyptia/cli/releases/download/v1.6.2/cli_1.6.2_linux_arm64.tar.gz"
+      sha256 "33528fec7f8dce39abace8456971101040eb20ccbcd9b27a54fdda0ad58ce9e0"
 
       def install
         bin.install "calyptia"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/calyptia/cli/releases/download/v1.6.1/cli_1.6.1_linux_arm64.tar.gz"
-      sha256 "56983dfb92ac1c5b635830874d525166946d5cd15f307bec37d5b074626d7926"
+    if Hardware::CPU.intel?
+      url "https://github.com/calyptia/cli/releases/download/v1.6.2/cli_1.6.2_linux_amd64.tar.gz"
+      sha256 "e425d5144107fb343e7ecba1c8362c656bbf238d73c8d442606c259690afe1d8"
 
       def install
         bin.install "calyptia"
