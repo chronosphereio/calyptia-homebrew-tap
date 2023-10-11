@@ -5,20 +5,20 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/calyptia/cli"
-  version "1.8.0"
+  version "1.8.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/calyptia/cli/releases/download/v1.8.0/cli_1.8.0_darwin_arm64.tar.gz"
-      sha256 "c2fdebae48941b995a07927a174634209224f50cca1e4f7ef30a789ce31e256e"
+      url "https://github.com/calyptia/cli/releases/download/v1.8.1/cli_1.8.1_darwin_arm64.tar.gz"
+      sha256 "dc071c47f54b87c483ef7d120c7e4f74a5b0f4da9e8fd7b52ba9d74933aacf16"
 
       def install
         bin.install "calyptia"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v1.8.0/cli_1.8.0_darwin_amd64.tar.gz"
-      sha256 "68b25bc16741bd1e247908402a30ae8f69ff9211110482a39f61a8e875be0f29"
+      url "https://github.com/calyptia/cli/releases/download/v1.8.1/cli_1.8.1_darwin_amd64.tar.gz"
+      sha256 "e1b33a69bc7f0b80509aae46fd7d0d7cf234f1c2f7665e0d95b228244f85e077"
 
       def install
         bin.install "calyptia"
@@ -28,16 +28,16 @@ class Calyptia < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/calyptia/cli/releases/download/v1.8.0/cli_1.8.0_linux_arm64.tar.gz"
-      sha256 "5f985a4d2a63b5995bd339d5f5132ac70ee28a5a496509643cb40febc0a03f2f"
+      url "https://github.com/calyptia/cli/releases/download/v1.8.1/cli_1.8.1_linux_arm64.tar.gz"
+      sha256 "a47807a7c20e792990e4f1a8f086cb3ff9ba2ae6f810a8432a641290f72f3983"
 
       def install
         bin.install "calyptia"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/calyptia/cli/releases/download/v1.8.0/cli_1.8.0_linux_amd64.tar.gz"
-      sha256 "7d2d14839a4c47c468d9916861bba3259fa563c75029ebb22469854491fc1481"
+      url "https://github.com/calyptia/cli/releases/download/v1.8.1/cli_1.8.1_linux_amd64.tar.gz"
+      sha256 "898589db482be183b18e3e19b6b793d2c18c5f79cdb6a8014bc0cca48335add5"
 
       def install
         bin.install "calyptia"
