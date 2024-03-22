@@ -5,20 +5,20 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/chronosphereio/calyptia-cli"
-  version "1.16.0"
+  version "1.16.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.0/calyptia-cli_1.16.0_darwin_arm64.tar.gz"
-      sha256 "764d2c9a09fd8abe187f4e57bfd0cc12582da9fe15015e41ae8ea939f6d214d7"
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.1/calyptia-cli_1.16.1_darwin_arm64.tar.gz"
+      sha256 "ef79bf167b3f05d56f896b68dc0781bd06160c2fb0b8939bb25f94875bc05f61"
 
       def install
         bin.install "calyptia"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.0/calyptia-cli_1.16.0_darwin_amd64.tar.gz"
-      sha256 "f18c7e20e0e2d94f43987f682b746b03266b1a8db1eeb870991a6d8cac346d68"
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.1/calyptia-cli_1.16.1_darwin_amd64.tar.gz"
+      sha256 "7abfbbf2fac93d4fd9e551ab4c8e79f5405bb3e69fc501d3428a78587b8c0808"
 
       def install
         bin.install "calyptia"
@@ -28,16 +28,16 @@ class Calyptia < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.0/calyptia-cli_1.16.0_linux_arm64.tar.gz"
-      sha256 "498fe4c27bc5da255bf91a7a58cb286f56933dea55f2d642f425484f2f980e1e"
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.1/calyptia-cli_1.16.1_linux_arm64.tar.gz"
+      sha256 "792bd20c79ea766a806fa06b6bb30fb09df8e37bc9b78b7870ecd87b89e5450d"
 
       def install
         bin.install "calyptia"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.0/calyptia-cli_1.16.0_linux_amd64.tar.gz"
-      sha256 "8712f543dec4d3ed5da1587893608da301ce396540d949a8442a8ff937e4c10f"
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.16.1/calyptia-cli_1.16.1_linux_amd64.tar.gz"
+      sha256 "d01f5f7f553f805bc71867c5a1e4ec26521bb4ba280b066548d2b81db1cf739e"
 
       def install
         bin.install "calyptia"
