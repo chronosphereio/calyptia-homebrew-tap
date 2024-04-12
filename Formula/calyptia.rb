@@ -5,20 +5,20 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/chronosphereio/calyptia-cli"
-  version "1.17.1"
+  version "1.17.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.1/calyptia-cli_1.17.1_darwin_arm64.tar.gz"
-      sha256 "f9fc1f4cf9a4d1fdf307aa8b969e35f469f5486e273a22d294561642c03e8820"
+    if Hardware::CPU.intel?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.2/calyptia-cli_1.17.2_darwin_amd64.tar.gz"
+      sha256 "b5b5db3006c23caef0518b517a9fff0c644d9b7b7eb3216e6efc24fa68426d6b"
 
       def install
         bin.install "calyptia"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.1/calyptia-cli_1.17.1_darwin_amd64.tar.gz"
-      sha256 "672ddac303944814f94a7edc27c0c9c42b94ea9a2604ae90a7d7568b6de72b6d"
+    if Hardware::CPU.arm?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.2/calyptia-cli_1.17.2_darwin_arm64.tar.gz"
+      sha256 "e4a1066459b36a74c9ad6c7fbc918835e13fbdcefa1c44b6569f60c4a53bcdb6"
 
       def install
         bin.install "calyptia"
@@ -27,17 +27,17 @@ class Calyptia < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.1/calyptia-cli_1.17.1_linux_arm64.tar.gz"
-      sha256 "8c004c8e62ba8ddfdb94589b00703252c0204e55cb486cc09be5622ea8b8024e"
+    if Hardware::CPU.intel?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.2/calyptia-cli_1.17.2_linux_amd64.tar.gz"
+      sha256 "dc7ed2c4953a5c7a90c77adc66ff9cd3cf5e6cb90cb74aeba4ce440f894e47a1"
 
       def install
         bin.install "calyptia"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.1/calyptia-cli_1.17.1_linux_amd64.tar.gz"
-      sha256 "dd0436a6f4e0d7908378d81501dd896fc2d6dc8a665a3f0f51e05301100f4015"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.17.2/calyptia-cli_1.17.2_linux_arm64.tar.gz"
+      sha256 "ea8bd44aa7480932da4357e8f901b4b14c86668d277fb7de5ee6e6e8b797ac8e"
 
       def install
         bin.install "calyptia"
