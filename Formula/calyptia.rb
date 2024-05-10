@@ -5,20 +5,30 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/chronosphereio/calyptia-cli"
-  version "1.18.0"
+  version "1.18.1"
+  license "Apache-2.0"
 
   on_macos do
+    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.1/calyptia-cli_1.18.1_darwin_all.tar.gz"
+    sha256 "cb4fe4b1082e52a669bf2efc0a0e70c5e466e2d0d53b4815c6b6f0598438248c"
+
+    def install
+      bin.install "calyptia"
+    end
+  end
+
+  on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.0/calyptia-cli_1.18.0_darwin_amd64.tar.gz"
-      sha256 "e33219893f251832605747e3c4ed579aa71ce924cfdfd0808047b5e19f214ffc"
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.1/calyptia-cli_1.18.1_linux_amd64.tar.gz"
+      sha256 "465a27a8598e8a90673dc19f89d33be497ef99111223bdd998ca00402ac2bfa2"
 
       def install
         bin.install "calyptia"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.0/calyptia-cli_1.18.0_darwin_arm64.tar.gz"
-      sha256 "276463f112a1f08a23cb3cd25facef4c671152c8469e80983a748c0b997956b8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.1/calyptia-cli_1.18.1_linux_arm64.tar.gz"
+      sha256 "6485124f52a3eea7a7b2978b0d643062b39a7dfd79ab974ad9d39ad6219e8cb6"
 
       def install
         bin.install "calyptia"
@@ -26,22 +36,7 @@ class Calyptia < Formula
     end
   end
 
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.0/calyptia-cli_1.18.0_linux_amd64.tar.gz"
-      sha256 "87d2b8f91e762c671e2d54f18111edd81e7676276a64251b4c905b6cc63648bc"
-
-      def install
-        bin.install "calyptia"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.18.0/calyptia-cli_1.18.0_linux_arm64.tar.gz"
-      sha256 "2a8f938177a9d9b1b15498e46c3fbff13ed6263d5ebb34e946911da81bf54d00"
-
-      def install
-        bin.install "calyptia"
-      end
-    end
+  test do
+    system "#{bin}/calyptia version"
   end
 end
