@@ -5,12 +5,12 @@
 class Calyptia < Formula
   desc "Calyptia Cloud CLI"
   homepage "https://github.com/chronosphereio/calyptia-cli"
-  version "1.19.0"
+  version "1.19.1"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.19.0/calyptia-cli_1.19.0_darwin_all.tar.gz"
-    sha256 "2a2629a710773ed68f3573bdde2959c8bdfb251f31fd718667c1f4dc8a06cd0e"
+    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.19.1/calyptia-cli_1.19.1_darwin_all.tar.gz"
+    sha256 "486548166fe4e81871bce5e5277fe7af1af7e8dae8a8f94fbd1c24a759531482"
 
     def install
       bin.install "calyptia"
@@ -20,8 +20,8 @@ class Calyptia < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.19.0/calyptia-cli_1.19.0_linux_amd64.tar.gz"
-        sha256 "defc859030992e48f39e7c62a1a39e47fb18cbb66801c3eb50db819dbecff5c7"
+        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.19.1/calyptia-cli_1.19.1_linux_amd64.tar.gz"
+        sha256 "66a56d496563e024c4ba912863d1adfeb52402d1be41b3363d4f2e85722d9996"
 
         def install
           bin.install "calyptia"
@@ -30,8 +30,8 @@ class Calyptia < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.19.0/calyptia-cli_1.19.0_linux_arm64.tar.gz"
-        sha256 "59c466f78d8d4250f091d765af0e123130254cab88aa4cdfe1ef48ca9335a705"
+        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v1.19.1/calyptia-cli_1.19.1_linux_arm64.tar.gz"
+        sha256 "3de990ac2e3256b8f8090ee73eff773213e3fd560777c0902593c834653e8ee0"
 
         def install
           bin.install "calyptia"
