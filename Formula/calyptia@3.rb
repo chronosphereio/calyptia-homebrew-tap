@@ -5,12 +5,12 @@
 class CalyptiaAT3 < Formula
   desc "Chronosphere Telemetry Pipelines CLI"
   homepage "https://docs.chronosphere.io/pipeline-cli"
-  version "3.13.0"
+  version "3.16.0"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.13.0/calyptia-cli_3.13.0_darwin_all.tar.gz"
-    sha256 "2e4bb3eba14f0e49e734c54371d4cf244adbbb05fa01caab06f06b524e794a01"
+    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.16.0/calyptia-cli_3.16.0_darwin_all.tar.gz"
+    sha256 "dcfd079069a89b1c736ea4830a0d2854ccbb83a80f7314c84b3eed0b4c9e39a2"
 
     def install
       bin.install "calyptia"
@@ -18,20 +18,20 @@ class CalyptiaAT3 < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.13.0/calyptia-cli_3.13.0_linux_amd64.tar.gz"
-        sha256 "6b86b72cccd1d8a5a307ab4ed17efbfc3bf12133d3d3978b521800f7723d8b71"
+        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.16.0/calyptia-cli_3.16.0_linux_amd64.tar.gz"
+        sha256 "5cd588b3afe88395708fd9b9f64d067a000b7b86dd10207c766c6028ac846c3b"
 
         def install
           bin.install "calyptia"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.13.0/calyptia-cli_3.13.0_linux_arm64.tar.gz"
-        sha256 "41971b26be6ba83a3bf975328d0bf41acc179c3a01a62c3b193f48e7dcfaecdb"
+        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.16.0/calyptia-cli_3.16.0_linux_arm64.tar.gz"
+        sha256 "cfa1f3a2a4c834e1ff9e70ef129fd2c3264b3eca99f71450687b889118573079"
 
         def install
           bin.install "calyptia"
