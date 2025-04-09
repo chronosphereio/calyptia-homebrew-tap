@@ -5,12 +5,12 @@
 class PipelinectlAT3 < Formula
   desc "Chronosphere Telemetry Pipelines CLI"
   homepage "https://docs.chronosphere.io/pipeline-cli"
-  version "3.37.0"
+  version "3.39.0"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.37.0/pipelinectl_3.37.0_darwin_all.tar.gz"
-    sha256 "9732ff9164830130c7e2b2dec15a574a77e3af3aa9c2f206c508b2fef2a7b2ce"
+    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.39.0/pipelinectl_3.39.0_darwin_all.tar.gz"
+    sha256 "2ef2d3c06e212ca570fec900b2af8ec4cd44e0cab175e8bdd5f61efce197566c"
 
     def install
       bin.install "pipelinectl"
@@ -20,8 +20,8 @@ class PipelinectlAT3 < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.37.0/pipelinectl_3.37.0_linux_amd64.tar.gz"
-        sha256 "618c7db0e4be046e0174ff038da57f4833e82046513a43c51198956675ca37a4"
+        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.39.0/pipelinectl_3.39.0_linux_amd64.tar.gz"
+        sha256 "5d42886e4541728d4b41511a8b429011200d8c5196672f0c1cdacf0160066cab"
 
         def install
           bin.install "pipelinectl"
@@ -30,8 +30,8 @@ class PipelinectlAT3 < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.37.0/pipelinectl_3.37.0_linux_arm64.tar.gz"
-        sha256 "96daa58ebb00a8b4506b1001bff63633d1689aaedc80ed34b6902f9892587158"
+        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.39.0/pipelinectl_3.39.0_linux_arm64.tar.gz"
+        sha256 "964d1ff4243659de8be915ed7b15ee65c707f9c04a9671287a29980396ad7646"
 
         def install
           bin.install "pipelinectl"
