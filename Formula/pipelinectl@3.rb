@@ -5,12 +5,12 @@
 class PipelinectlAT3 < Formula
   desc "Chronosphere Telemetry Pipelines CLI"
   homepage "https://docs.chronosphere.io/pipeline-cli"
-  version "3.42.0"
+  version "3.43.0"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.42.0/pipelinectl_3.42.0_darwin_all.tar.gz"
-    sha256 "2fd5ead146aa5cac71a17a8c2fdadac06deefd9ebbe5a83840cd9e9778b3f82c"
+    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.43.0/pipelinectl_3.43.0_darwin_all.tar.gz"
+    sha256 "bf0f9898e62860feda7560ed1cd01f933d6231a00556cb20503cad56707ceb99"
 
     def install
       bin.install "pipelinectl"
@@ -18,24 +18,18 @@ class PipelinectlAT3 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.42.0/pipelinectl_3.42.0_linux_amd64.tar.gz"
-        sha256 "47458eab01d33faba777002ce4935d21978ba4207e799971103eb2ea0c51f932"
-
-        def install
-          bin.install "pipelinectl"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.43.0/pipelinectl_3.43.0_linux_amd64.tar.gz"
+      sha256 "02402aae070fd257be6bb68e3ad19ed54f87bf70f6f5e50d5aaeb4cc001ecce0"
+      def install
+        bin.install "pipelinectl"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.42.0/pipelinectl_3.42.0_linux_arm64.tar.gz"
-        sha256 "eb000d1e98a0102a6b87a9f4b0435ab64d828b2b25d61927940619f253f14080"
-
-        def install
-          bin.install "pipelinectl"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.43.0/pipelinectl_3.43.0_linux_arm64.tar.gz"
+      sha256 "1b0d7b01e05ee8c8862b445e7e8a9d1162ef07bbdadce5279cf9de029e212364"
+      def install
+        bin.install "pipelinectl"
       end
     end
   end
