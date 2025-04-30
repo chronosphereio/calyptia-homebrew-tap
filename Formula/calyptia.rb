@@ -5,12 +5,12 @@
 class Calyptia < Formula
   desc "Chronosphere Telemetry Pipelines CLI"
   homepage "https://docs.chronosphere.io/pipeline-cli"
-  version "3.42.0"
+  version "3.43.0"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.42.0/calyptia-cli_3.42.0_darwin_all.tar.gz"
-    sha256 "1ced9e5f381eda4baaf8dd6dff16d931e00db8cce945c1ff4c954bf3a7f9ff28"
+    url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.43.0/calyptia-cli_3.43.0_darwin_all.tar.gz"
+    sha256 "b6e4c596db291c002ba226b812266d3985443af82e3a70679827f4a3861b5c40"
 
     def install
       bin.install "calyptia"
@@ -18,24 +18,18 @@ class Calyptia < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.42.0/calyptia-cli_3.42.0_linux_amd64.tar.gz"
-        sha256 "e20e7d39958f5ad03d6e0361eff7ea2d9bfa894bd2b83894e683ec562f23cb3e"
-
-        def install
-          bin.install "calyptia"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.43.0/calyptia-cli_3.43.0_linux_amd64.tar.gz"
+      sha256 "5dcdb3c955bfac8a37fe9b2f286f68bcf6320f3ea564f4969f0b89ec7d3c2c91"
+      def install
+        bin.install "calyptia"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.42.0/calyptia-cli_3.42.0_linux_arm64.tar.gz"
-        sha256 "4a3d3783660b63d0a8ad0bc893ff719835785eae18a673de5edd8205c8790f50"
-
-        def install
-          bin.install "calyptia"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/chronosphereio/calyptia-cli/releases/download/v3.43.0/calyptia-cli_3.43.0_linux_arm64.tar.gz"
+      sha256 "75a7d2335ff0988b1a78765af35b8a2ce5d61817306a76c87ef854a63e861ac9"
+      def install
+        bin.install "calyptia"
       end
     end
   end
